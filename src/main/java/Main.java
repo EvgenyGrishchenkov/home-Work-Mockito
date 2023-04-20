@@ -3,6 +3,7 @@ import java.util.Map;
 
 import ru.netology.geo.GeoService;
 import ru.netology.geo.GeoServiceImpl;
+import ru.netology.geo.GeoServiceStub;
 import ru.netology.i18n.LocalizationService;
 import ru.netology.i18n.LocalizationServiceImpl;
 import ru.netology.sender.MessageSender;
@@ -20,4 +21,6 @@ public class Main {
         headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, "172.123.12.19");
         messageSender.send(headers);
     }
+    //GeoServiceStub geoServiceStub = new GeoServiceStub;
+    //geoServiceStub.byIp("172.");
 }

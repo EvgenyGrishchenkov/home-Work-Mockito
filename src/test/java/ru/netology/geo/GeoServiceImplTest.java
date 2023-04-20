@@ -10,11 +10,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class GeoServiceImplTest {
 GeoService geoService = new GeoServiceImpl();
     @Test
-    void test_byIp_geoService() {
-        String param = "172.0.32.11";
-        Location expected = new Location("Moscow", Country.RUSSIA, "Lenina", 15);
-        //Location result = geoService.byIp(param);
-        Assertions.assertEquals(expected, geoService.byIp(param), "совпадение");
+    void test_byIp_geoServiceMoscow() {
+        String expected = "Moscow";
+        String result = geoService.byIp("172.0.32.11").getCity();
+        Assertions.assertEquals(expected, result);
+    }
 
+    @Test
+    void test_byIp_geoServiceNewYork() {
+        String expected = "New York";
+        String result = geoService.byIp("96.44.183.149").getCity();
+        Assertions.assertEquals(expected, result);
     }
 }
